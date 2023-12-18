@@ -14,6 +14,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
       automaticallyImplyLeading: backArrow,
       title: Center(child: Text(title,style: TextStyle(color: TColor.primaryText,fontSize: 25, fontWeight: FontWeight.w800 ))),
 
+
     );
   }
   @override

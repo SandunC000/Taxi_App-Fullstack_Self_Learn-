@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:taxi_app/features/presentation/views/mobile_number_view/mobile_number_view.dart';
 import 'package:taxi_app/features/presentation/views/splash_view/splash_view.dart';
-import 'package:taxi_app/features/presentation/views/welcome_view/welcom_view.dart';
+import 'package:taxi_app/features/presentation/views/welcome_view/welcome_view.dart';
 
 import 'core/util/app_colors.dart';
 import 'core/util/navigation_routes.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: TColor.primary),
         useMaterial3: false,
       ),
-      home: const WelcomeView(),
+      home: const MobileNumberView(),
     );
   }
 }
