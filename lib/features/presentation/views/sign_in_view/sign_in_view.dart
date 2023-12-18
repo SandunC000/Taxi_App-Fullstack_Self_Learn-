@@ -4,20 +4,19 @@ import 'package:taxi_app/core/util/app_colors.dart';
 import 'package:taxi_app/core/util/navigation_routes.dart';
 import 'package:taxi_app/features/presentation/common/app_bar.dart';
 import 'package:taxi_app/features/presentation/common/round_button.dart';
-import 'package:taxi_app/features/presentation/views/otp_view/otp_view.dart';
 
-class MobileNumberView extends StatefulWidget {
-  const MobileNumberView({super.key});
+class SignInView extends StatefulWidget {
+  const SignInView({super.key});
 
   @override
-  State<MobileNumberView> createState() => _MobileNumberViewState();
+  State<SignInView> createState() => _SignInViewState();
 }
 
-class _MobileNumberViewState extends State<MobileNumberView> {
+class _SignInViewState extends State<SignInView> {
   FlCountryCodePicker countryCodePicker = const FlCountryCodePicker();
-  late CountryCode countryCode;
-
   TextEditingController txtMobile = TextEditingController();
+  late CountryCode countryCode;
+  TextEditingController txtPassword = TextEditingController();
 
   @override
   void initState() {
@@ -31,7 +30,7 @@ class _MobileNumberViewState extends State<MobileNumberView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        title: 'Enter Mobile Number',
+        title: 'Sign In',
         backArrow: false,
       ),
       body: Padding(
@@ -95,37 +94,17 @@ class _MobileNumberViewState extends State<MobileNumberView> {
             const SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "By Continuing, I confirm that I have read & agree to the",
-                  style: TextStyle(color: TColor.secondaryText, fontSize: 12),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Terms & Conditions",
-                  style: TextStyle(color: TColor.primaryText, fontSize: 12),
-                ),
-                Text(
-                  " and ",
-                  style: TextStyle(color: TColor.secondaryText, fontSize: 12),
-                ),
-                Text(
-                  "Privacy Policy",
-                  style: TextStyle(color: TColor.primaryText, fontSize: 12),
-                ),
-              ],
-            ),
+
             const SizedBox(height: 25),
-            RoundButton(title: "Continue", onPressed: () {Navigator.pushNamed(context, Routes.OTP_VIEW,arguments: {'code': countryCode.code, 'number': txtMobile.text} );}),
+            RoundButton(title: "SIGN IN", onPressed: () {}),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                    onPressed: (){}, child: Text("Forgot Password",style: TextStyle(color: TColor.primary,fontSize: 16),)),
+              ],
+            )
           ],
         ),
       ),

@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   page_transition: ^2.0.9
   fl_country_code_picker: ^0.1.5
+  flutter_otp_text_field: ^1.1.1
+  otp_timer_button: ^1.1.0
 
 dev_dependencies:
   flutter_test:
