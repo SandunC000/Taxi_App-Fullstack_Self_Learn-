@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: TColor.primary),
         useMaterial3: false,
       ),
-      home: const SignInView(),
+      home: const SplashView(),
     );
   }
 }

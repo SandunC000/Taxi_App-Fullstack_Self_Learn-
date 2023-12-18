@@ -6,18 +6,21 @@ import 'package:taxi_app/features/presentation/common/app_bar.dart';
 import 'package:taxi_app/features/presentation/common/line_text_field.dart';
 import 'package:taxi_app/features/presentation/common/round_button.dart';
 
-class SignInView extends StatefulWidget {
-  const SignInView({super.key});
+class SignUpView extends StatefulWidget {
+  const SignUpView({super.key});
 
   @override
-  State<SignInView> createState() => _SignInViewState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _SignInViewState extends State<SignInView> {
+class _SignUpViewState extends State<SignUpView> {
   FlCountryCodePicker countryCodePicker = const FlCountryCodePicker();
   late CountryCode countryCode;
 
   TextEditingController txtMobile = TextEditingController();
+  TextEditingController txtLastName = TextEditingController();
+  TextEditingController txtFirstName = TextEditingController();
+  TextEditingController txtHomeAddress = TextEditingController();
   TextEditingController txtPassword = TextEditingController();
 
   @override
@@ -32,7 +35,7 @@ class _SignInViewState extends State<SignInView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        title: 'Sign In',
+        title: 'Create Account',
         backArrow: false,
       ),
       body: Padding(
@@ -43,6 +46,24 @@ class _SignInViewState extends State<SignInView> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
+            LineTextField(
+              title: "First Name",
+              hintText: "John",
+              obscureText: false,
+              controller: txtFirstName,
+            ),
+            LineTextField(
+              title: "First Name",
+              hintText: "John",
+              obscureText: false,
+              controller: txtFirstName,
+            ),
+
+
+
+
+
+
             Text(
               "Mobile Number",
               style: TextStyle(color: TColor.placeholder, fontSize: 16),

@@ -4,6 +4,7 @@ import 'package:taxi_app/features/presentation/views/change_language_view/change
 import 'package:taxi_app/features/presentation/views/mobile_number_view/mobile_number_view.dart';
 import 'package:taxi_app/features/presentation/views/otp_view/otp_view.dart';
 import 'package:taxi_app/features/presentation/views/sign_in_view/sign_in_view.dart';
+import 'package:taxi_app/features/presentation/views/sign_up_view/sign_up_view.dart';
 import 'package:taxi_app/features/presentation/views/welcome_view/welcome_view.dart';
 
 class Routes {
@@ -12,6 +13,8 @@ class Routes {
   static const String MOBILE_NUMBER_VIEW = "MOBILE_NUMBER_VIEW";
   static const String OTP_VIEW = "OTP_VIEW";
   static const String SIGN_IN_VIEW = "SIGN_IN_VIEW";
+  static const String SIGN_UP_VIEW = "SIGN_UP_VIEW";
+
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name){
@@ -27,11 +30,16 @@ class Routes {
         return PageTransition(
           child: const MobileNumberView(), type: PageTransitionType.fade,
         );
-
       case Routes.SIGN_IN_VIEW:
         return PageTransition(
           child: const SignInView(), type: PageTransitionType.fade,
         );
+      case Routes.SIGN_UP_VIEW:
+        return PageTransition(
+          child: const SignUpView(), type: PageTransitionType.fade,
+        );
+
+
       case Routes.OTP_VIEW:
         final Map<String, dynamic> args = settings.arguments as Map<String, dynamic>;
         return PageTransition(
