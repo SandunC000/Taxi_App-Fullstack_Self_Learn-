@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:taxi_app/features/presentation/views/registering_documents/bank_details_view.dart';
 import 'package:taxi_app/features/presentation/views/change_language_view/change_language.dart';
 import 'package:taxi_app/features/presentation/views/mobile_number_view/mobile_number_view.dart';
 import 'package:taxi_app/features/presentation/views/otp_view/otp_view.dart';
+import 'package:taxi_app/features/presentation/views/registering_documents/document_upload_view.dart';
 import 'package:taxi_app/features/presentation/views/sign_in_view/sign_in_view.dart';
 import 'package:taxi_app/features/presentation/views/sign_up_view/sign_up_view.dart';
 import 'package:taxi_app/features/presentation/views/welcome_view/welcome_view.dart';
@@ -14,6 +16,8 @@ class Routes {
   static const String OTP_VIEW = "OTP_VIEW";
   static const String SIGN_IN_VIEW = "SIGN_IN_VIEW";
   static const String SIGN_UP_VIEW = "SIGN_UP_VIEW";
+  static const String BANK_DETAILS_VIEW = "BANK_DETAILS_VIEW";
+  static const String DOCUMENT_UPLOAD_VIEW = "DOCUMENT_UPLOAD_VIEW";
 
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -37,6 +41,14 @@ class Routes {
       case Routes.SIGN_UP_VIEW:
         return PageTransition(
           child: const SignUpView(), type: PageTransitionType.fade,
+        );
+      case Routes.BANK_DETAILS_VIEW:
+        return PageTransition(
+          child: const BankDetailsView(), type: PageTransitionType.fade,
+        );
+      case Routes.DOCUMENT_UPLOAD_VIEW:
+        return PageTransition(
+          child: const DocumentUploadView(), type: PageTransitionType.rightToLeft,
         );
 
 

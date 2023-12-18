@@ -18,8 +18,8 @@ class _SignUpViewState extends State<SignUpView> {
   late CountryCode countryCode;
 
   TextEditingController txtMobile = TextEditingController();
-  TextEditingController txtLastName = TextEditingController();
   TextEditingController txtFirstName = TextEditingController();
+  TextEditingController txtLastName = TextEditingController();
   TextEditingController txtHomeAddress = TextEditingController();
   TextEditingController txtPassword = TextEditingController();
 
@@ -40,17 +40,13 @@ class _SignUpViewState extends State<SignUpView> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
-            LineTextField(
-              title: "First Name",
-              hintText: "John",
-              obscureText: false,
-              controller: txtFirstName,
+            const Divider(
+              thickness: 1,
             ),
             LineTextField(
               title: "First Name",
@@ -58,18 +54,34 @@ class _SignUpViewState extends State<SignUpView> {
               obscureText: false,
               controller: txtFirstName,
             ),
-
-
-
-
-
-
+            const Divider(
+              thickness: 1,
+            ),
+            LineTextField(
+              title: "Last Name",
+              hintText: "Mcintyre",
+              obscureText: false,
+              controller: txtLastName,
+            ),
+            const Divider(
+              thickness: 1,
+            ),
+            LineTextField(
+              title: "Address",
+              hintText: "Mcintyre",
+              obscureText: false,
+              controller: txtHomeAddress,
+            ),
+            const Divider(
+              thickness: 1,
+            ),
+            const SizedBox(height: 10),
             Text(
               "Mobile Number",
-              style: TextStyle(color: TColor.placeholder, fontSize: 16),
+              style: TextStyle(color: TColor.primaryText, fontSize: 16),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   children: [
@@ -101,10 +113,8 @@ class _SignUpViewState extends State<SignUpView> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
+                SizedBox(
+                  width: MediaQuery.of(context).size.width*0.6,
                   child: TextField(
                     controller: txtMobile,
                     keyboardType: TextInputType.phone,
@@ -118,9 +128,6 @@ class _SignUpViewState extends State<SignUpView> {
             ),
             const Divider(
               thickness: 1,
-            ),
-            const SizedBox(
-              height: 10,
             ),
             LineTextField(
               title: "Password",
@@ -137,7 +144,7 @@ class _SignUpViewState extends State<SignUpView> {
             const SizedBox(
               height: 10,
             ),
-            RoundButton(title: "SIGN IN", onPressed: () {}),
+            RoundButton(title: "REGISTER", onPressed: () {Navigator.pushNamed(context, Routes.BANK_DETAILS_VIEW);}),
             const SizedBox(
               height: 10,
             ),
@@ -145,7 +152,9 @@ class _SignUpViewState extends State<SignUpView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                    onPressed: () {Navigator.pushNamed(context, Routes.MOBILE_NUMBER_VIEW);},
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.MOBILE_NUMBER_VIEW);
+                    },
                     child: Text(
                       "Forgot Password",
                       style: TextStyle(color: TColor.primary, fontSize: 16),

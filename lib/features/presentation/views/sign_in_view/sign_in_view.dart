@@ -43,12 +43,15 @@ class _SignInViewState extends State<SignInView> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
+            const Divider(
+              thickness: 1,
+            ),
             Text(
               "Mobile Number",
-              style: TextStyle(color: TColor.placeholder, fontSize: 16),
+              style: TextStyle(color: TColor.primaryText, fontSize: 16),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   children: [
@@ -80,10 +83,8 @@ class _SignInViewState extends State<SignInView> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
+                SizedBox(
+                  width: MediaQuery.of(context).size.width*0.6,
                   child: TextField(
                     controller: txtMobile,
                     keyboardType: TextInputType.phone,
@@ -97,9 +98,6 @@ class _SignInViewState extends State<SignInView> {
             ),
             const Divider(
               thickness: 1,
-            ),
-            const SizedBox(
-              height: 10,
             ),
             LineTextField(
               title: "Password",
@@ -124,7 +122,9 @@ class _SignInViewState extends State<SignInView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                    onPressed: () {Navigator.pushNamed(context, Routes.MOBILE_NUMBER_VIEW);},
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.MOBILE_NUMBER_VIEW);
+                    },
                     child: Text(
                       "Forgot Password",
                       style: TextStyle(color: TColor.primary, fontSize: 16),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:taxi_app/core/util/app_colors.dart';
 
-class LineTextField extends StatelessWidget {
+class LineTextFieldCol extends StatelessWidget {
   final String title;
   final String hintText;
   final TextEditingController? controller;
@@ -9,26 +9,27 @@ class LineTextField extends StatelessWidget {
   final bool obscureText;
   final Widget? right;
 
-  const LineTextField(
+  const LineTextFieldCol(
       {super.key,
-      required this.title,
-      required this.hintText,
-      this.controller,
-      this.keyboardType,
-      required this.obscureText,
-      this.right});
+        required this.title,
+        required this.hintText,
+        this.controller,
+        this.keyboardType,
+        required this.obscureText,
+        this.right});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           title,
           style: TextStyle(color: TColor.primaryText, fontSize: 16),
         ),
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.6,
+          width: MediaQuery.of(context).size.width * 0.8,
           child: TextField(
             controller: controller,
             keyboardType: keyboardType,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:taxi_app/features/presentation/views/registering_documents/bank_details_view.dart';
 import 'package:taxi_app/features/presentation/views/mobile_number_view/mobile_number_view.dart';
 import 'package:taxi_app/features/presentation/views/otp_view/otp_view.dart';
 import 'package:taxi_app/features/presentation/views/sign_in_view/sign_in_view.dart';
+import 'package:taxi_app/features/presentation/views/sign_up_view/sign_up_view.dart';
 import 'package:taxi_app/features/presentation/views/splash_view/splash_view.dart';
 import 'package:taxi_app/features/presentation/views/welcome_view/welcome_view.dart';
 
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: TColor.primary),
         useMaterial3: false,
       ),
-      home: const SplashView(),
+      home: const BankDetailsView(),
     );
   }
 }

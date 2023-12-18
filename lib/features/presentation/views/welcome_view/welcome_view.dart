@@ -44,10 +44,16 @@ class _WelcomeViewState extends State<WelcomeView> {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: RoundButton(title: "SIGN IN", onPressed: () {Navigator.pushNamed(context, Routes.SIGN_IN_VIEW);}),
+                child: RoundButton(
+                    title: "SIGN IN",
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.SIGN_IN_VIEW);
+                    }),
               ),
               TextButton(
-                  onPressed: () {Navigator.pushNamed(context, Routes.SIGN_UP_VIEW);},
+                  onPressed: () {
+                    Navigator.pushNamed(context, Routes.SIGN_UP_VIEW);
+                  },
                   child: Center(
                       child: Text("SIGN UP",
                           style: TextStyle(

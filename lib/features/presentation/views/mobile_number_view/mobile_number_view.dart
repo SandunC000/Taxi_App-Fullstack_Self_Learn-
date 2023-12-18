@@ -41,8 +41,12 @@ class _MobileNumberViewState extends State<MobileNumberView> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
+            const Divider(
+              thickness: 1,
+            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Column(
                   children: [
@@ -56,7 +60,6 @@ class _MobileNumberViewState extends State<MobileNumberView> {
                         }
                       },
                       child: Row(
-                        mainAxisSize: MainAxisSize.min,
                         children: [
                           SizedBox(
                             width: 40,
@@ -74,10 +77,8 @@ class _MobileNumberViewState extends State<MobileNumberView> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
+                SizedBox(
+                  width: MediaQuery.of(context).size.width*0.6,
                   child: TextField(
                     controller: txtMobile,
                     keyboardType: TextInputType.phone,
@@ -125,7 +126,14 @@ class _MobileNumberViewState extends State<MobileNumberView> {
               ],
             ),
             const SizedBox(height: 25),
-            RoundButton(title: "Continue", onPressed: () {Navigator.pushNamed(context, Routes.OTP_VIEW,arguments: {'code': countryCode.code, 'number': txtMobile.text} );}),
+            RoundButton(
+                title: "Continue",
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.OTP_VIEW, arguments: {
+                    'code': countryCode.code,
+                    'number': txtMobile.text
+                  });
+                }),
           ],
         ),
       ),

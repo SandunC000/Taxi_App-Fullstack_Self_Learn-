@@ -12,7 +12,6 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-
   @override
   void initState() {
     // TODO: implement initState
@@ -26,7 +25,7 @@ class _SplashViewState extends State<SplashView> {
     loadNextScreen();
   }
 
-  void loadNextScreen(){
+  void loadNextScreen() {
     Navigator.pushReplacementNamed(context, Routes.CHANGE_LANGUAGE);
   }
 
@@ -42,7 +41,11 @@ class _SplashViewState extends State<SplashView> {
             height: context.height,
             color: TColor.primary,
           ),
-          Image.asset(AppImages.logo,width: context.width*0.4,color: Colors.white,),
+          Image.asset(
+            AppImages.logo,
+            width: context.width * 0.4,
+            color: Colors.white,
+          ),
         ],
       ),
     );
