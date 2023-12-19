@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:taxi_app/core/util/app_colors.dart';
 import 'package:taxi_app/features/presentation/common/app_bar.dart';
+import 'package:taxi_app/features/presentation/common/document_row.dart';
 import 'package:taxi_app/features/presentation/common/round_button.dart';
 
 class DocumentUploadView extends StatefulWidget {
@@ -11,6 +12,33 @@ class DocumentUploadView extends StatefulWidget {
 }
 
 class _DocumentUploadViewState extends State<DocumentUploadView> {
+  List documentList = [
+    {
+      "name": "Birth Certificate",
+      "detail": "Vwhicle Registration",
+      "info": "",
+      "status": DocumentStatus.uploaded,
+    },
+    {
+      "name": "Driving Licence",
+      "detail": "Driving Licence details",
+      "info": "",
+      "status": DocumentStatus.uploading,
+    },
+    {
+      "name": "Passport",
+      "detail": "Passport details",
+      "info": "",
+      "status": DocumentStatus.upload,
+    },
+    {
+      "name": "Election Card",
+      "detail": "Election Card detaiks",
+      "info": "",
+      "status": DocumentStatus.upload,
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +53,24 @@ class _DocumentUploadViewState extends State<DocumentUploadView> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
             ),
-            const Divider(
-              thickness: 1,
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  var dObj = documentList[index] as Map? ?? {};
+                  return DocumentRow(
+                      dObj: dObj,
+                      onPressed: () {},
+                      onInfo: () {},
+                      onUpload: () {},
+                      onAction: () {},
+                      status: dObj["status"] as DocumentStatus? ??
+                          DocumentStatus.upload);
+                },
+                // separatorBuilder: (context, index) {
+                //   return const Divider();
+                // },
+                itemCount: documentList.length),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
