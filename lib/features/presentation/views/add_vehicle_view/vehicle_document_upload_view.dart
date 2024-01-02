@@ -4,37 +4,36 @@ import 'package:taxi_app/features/presentation/common/app_bar.dart';
 import 'package:taxi_app/features/presentation/common/document_row.dart';
 import 'package:taxi_app/features/presentation/common/round_button.dart';
 
-import 'package:taxi_app/core/util/navigation_routes.dart';
-
-class DocumentUploadView extends StatefulWidget {
-  const DocumentUploadView({super.key});
+class VehicleDocumentUploadView extends StatefulWidget {
+  const VehicleDocumentUploadView({super.key});
 
   @override
-  State<DocumentUploadView> createState() => _DocumentUploadViewState();
+  State<VehicleDocumentUploadView> createState() =>
+      _VehicleDocumentUploadViewState();
 }
 
-class _DocumentUploadViewState extends State<DocumentUploadView> {
+class _VehicleDocumentUploadViewState extends State<VehicleDocumentUploadView> {
   List documentList = [
     {
-      "name": "Birth Certificate",
-      "detail": "Vwhicle Registration",
+      "name": "Vehicle Book",
+      "detail": "Vehicle Registration",
       "info": "",
       "status": DocumentStatus.uploaded,
     },
     {
-      "name": "Driving Licence",
+      "name": "Insurance Policy",
       "detail": "Driving Licence details",
       "info": "",
       "status": DocumentStatus.uploading,
     },
     {
-      "name": "Passport",
+      "name": "Owner Certificate",
       "detail": "Passport details",
       "info": "",
       "status": DocumentStatus.upload,
     },
     {
-      "name": "Election Card",
+      "name": "ECO Certificate",
       "detail": "Election Card details",
       "info": "",
       "status": DocumentStatus.upload,
@@ -45,8 +44,8 @@ class _DocumentUploadViewState extends State<DocumentUploadView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        title: 'Personal Documents',
-        backArrow: false,
+        title: 'Vehicle Documents',
+        backArrow: true,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -87,7 +86,7 @@ class _DocumentUploadViewState extends State<DocumentUploadView> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "Birth Certificate",
+                                      "Vehicle Book",
                                       style: TextStyle(
                                           color: TColor.primaryText,
                                           fontSize: 23,
@@ -161,7 +160,7 @@ class _DocumentUploadViewState extends State<DocumentUploadView> {
               ],
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-            RoundButton(title: "NEXT", onPressed: () {Navigator.pushNamed(context, Routes.ADD_VEHICLE_VIEW);}),
+            RoundButton(title: "NEXT", onPressed: () {}),
           ],
         ),
       ),

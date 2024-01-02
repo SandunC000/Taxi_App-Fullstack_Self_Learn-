@@ -32,9 +32,6 @@ class _BankDetailsViewState extends State<BankDetailsView> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
             ),
-            const Divider(
-              thickness: 1,
-            ),
             LineTextFieldCol(
               title: "Bank Name",
               hintText: "Standard Charted",

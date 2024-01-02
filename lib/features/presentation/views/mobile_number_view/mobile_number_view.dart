@@ -4,7 +4,6 @@ import 'package:taxi_app/core/util/app_colors.dart';
 import 'package:taxi_app/core/util/navigation_routes.dart';
 import 'package:taxi_app/features/presentation/common/app_bar.dart';
 import 'package:taxi_app/features/presentation/common/round_button.dart';
-import 'package:taxi_app/features/presentation/views/otp_view/otp_view.dart';
 
 class MobileNumberView extends StatefulWidget {
   const MobileNumberView({super.key});
@@ -78,7 +77,7 @@ class _MobileNumberViewState extends State<MobileNumberView> {
                   ],
                 ),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width*0.6,
+                  width: MediaQuery.of(context).size.width * 0.6,
                   child: TextField(
                     controller: txtMobile,
                     keyboardType: TextInputType.phone,

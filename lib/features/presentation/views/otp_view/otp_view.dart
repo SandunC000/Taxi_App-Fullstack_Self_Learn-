@@ -1,9 +1,7 @@
-import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:otp_timer_button/otp_timer_button.dart';
 import 'package:taxi_app/core/util/app_colors.dart';
-import 'package:taxi_app/core/util/navigation_routes.dart';
 import 'package:taxi_app/features/presentation/common/app_bar.dart';
 import 'package:taxi_app/features/presentation/common/round_button.dart';
 

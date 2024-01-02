@@ -45,9 +45,6 @@ class _SignUpViewState extends State<SignUpView> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
-            const Divider(
-              thickness: 1,
-            ),
             LineTextField(
               title: "First Name",
               hintText: "John",
