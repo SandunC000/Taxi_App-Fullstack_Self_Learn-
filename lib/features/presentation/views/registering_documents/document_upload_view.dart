@@ -33,7 +33,7 @@ class _DocumentUploadViewState extends State<DocumentUploadView> {
     },
     {
       "name": "Election Card",
-      "detail": "Election Card detaiks",
+      "detail": "Election Card details",
       "info": "",
       "status": DocumentStatus.upload,
     },
@@ -61,15 +61,73 @@ class _DocumentUploadViewState extends State<DocumentUploadView> {
                   return DocumentRow(
                       dObj: dObj,
                       onPressed: () {},
-                      onInfo: () {},
+                      onInfo: () {
+                        showModalBottomSheet(
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            context: context,
+                            builder: (context) {
+                              return Container(
+                                width: context.width,
+                                height: context.height - 100,
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 46, horizontal: 20),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 20, horizontal: 20),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(15),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Colors.black12, blurRadius: 3)
+                                    ]),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Birth Certificate",
+                                      style: TextStyle(
+                                          color: TColor.primaryText,
+                                          fontSize: 23,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    const SizedBox(height: 15),
+                                    Expanded(
+                                        child: SingleChildScrollView(
+                                      child: Text(
+                                        "dummy text",
+                                        style: TextStyle(
+                                          color: TColor.secondaryText,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                    )),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        TextButton(
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: Text(
+                                              "Okay",
+                                              style: TextStyle(
+                                                  color: TColor.primary,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w700),
+                                            ))
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              );
+                            });
+                      },
                       onUpload: () {},
                       onAction: () {},
                       status: dObj["status"] as DocumentStatus? ??
                           DocumentStatus.upload);
                 },
-                // separatorBuilder: (context, index) {
-                //   return const Divider();
-                // },
                 itemCount: documentList.length),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

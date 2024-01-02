@@ -9,7 +9,7 @@ import 'package:taxi_app/features/presentation/views/sign_in_view/sign_in_view.d
 import 'package:taxi_app/features/presentation/views/sign_up_view/sign_up_view.dart';
 import 'package:taxi_app/features/presentation/views/welcome_view/welcome_view.dart';
 
-class Routes {
+class Routes { 
   static const String CHANGE_LANGUAGE = "CHANGE_LANGUAGE";
   static const String WELCOME = "WELCOME";
   static const String MOBILE_NUMBER_VIEW = "MOBILE_NUMBER_VIEW";
