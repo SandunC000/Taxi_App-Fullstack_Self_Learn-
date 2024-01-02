@@ -25,7 +25,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void loadNextScreen() {
-    Navigator.pushReplacementNamed(context, Routes.CHANGE_LANGUAGE);
+    Navigator.pushReplacementNamed(context, Routes.HOME_VIEW);
   }
 
   @override

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:taxi_app/features/presentation/views/add_vehicle_view/add_vehicle_view.dart';
 import 'package:taxi_app/features/presentation/views/add_vehicle_view/vehicle_document_upload_view.dart';
+import 'package:taxi_app/features/presentation/views/home_view/home_view.dart';
 import 'package:taxi_app/features/presentation/views/registering_documents/bank_details_view.dart';
 import 'package:taxi_app/features/presentation/views/change_language_view/change_language.dart';
 import 'package:taxi_app/features/presentation/views/mobile_number_view/mobile_number_view.dart';
@@ -24,6 +25,7 @@ class Routes {
   static const String ADD_VEHICLE_VIEW = "ADD_VEHICLE_VIEW";
   static const String VEHICLE_DOCUMENT_UPLOAD_VIEW = "VEHICLE_DOCUMENT_UPLOAD_VIEW";
   static const String SUBSCRIPTION_PLAN_VIEW = "SUBSCRIPTION_PLAN_VIEW";
+  static const String HOME_VIEW = "HOME_VIEW";
 
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -67,6 +69,10 @@ class Routes {
       case Routes.SUBSCRIPTION_PLAN_VIEW:
         return PageTransition(
           child: const SubscriptionPlanView(), type: PageTransitionType.rightToLeft,
+        );
+      case Routes.HOME_VIEW:
+        return PageTransition(
+          child: const HomeView(), type: PageTransitionType.rightToLeft,
         );
 
 
