@@ -11,6 +11,7 @@ import 'package:taxi_app/features/presentation/views/registering_documents/docum
 import 'package:taxi_app/features/presentation/views/sign_in_view/sign_in_view.dart';
 import 'package:taxi_app/features/presentation/views/sign_up_view/sign_up_view.dart';
 import 'package:taxi_app/features/presentation/views/subscription_plan_view/subscription_plan_view.dart';
+import 'package:taxi_app/features/presentation/views/trip_request_view/trip_request_view.dart';
 import 'package:taxi_app/features/presentation/views/welcome_view/welcome_view.dart';
 
 class Routes { 
@@ -26,6 +27,7 @@ class Routes {
   static const String VEHICLE_DOCUMENT_UPLOAD_VIEW = "VEHICLE_DOCUMENT_UPLOAD_VIEW";
   static const String SUBSCRIPTION_PLAN_VIEW = "SUBSCRIPTION_PLAN_VIEW";
   static const String HOME_VIEW = "HOME_VIEW";
+  static const String TRIP_REQUEST_VIEW = "TRIP_REQUEST_VIEW";
 
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -73,6 +75,10 @@ class Routes {
       case Routes.HOME_VIEW:
         return PageTransition(
           child: const HomeView(), type: PageTransitionType.rightToLeft,
+        );
+      case Routes.TRIP_REQUEST_VIEW:
+        return PageTransition(
+          child: const TripRequestView(), type: PageTransitionType.rightToLeft,
         );
 
 
