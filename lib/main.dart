@@ -12,16 +12,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Taxi Driver',
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: Routes.generateRoute,
-      theme: ThemeData(
-        scaffoldBackgroundColor: TColor.bg,
-        colorScheme: ColorScheme.fromSeed(seedColor: TColor.primary),
-        useMaterial3: false,
+    return SafeArea(
+      child: MaterialApp(
+        title: 'Taxi Driver',
+        debugShowCheckedModeBanner: false,
+        onGenerateRoute: Routes.generateRoute,
+        theme: ThemeData(
+          scaffoldBackgroundColor: TColor.bg,
+          colorScheme: ColorScheme.fromSeed(seedColor: TColor.primary),
+          useMaterial3: false,
+        ),
+        home: const SplashView(),
       ),
-      home: const SplashView(),
     );
   }
 }

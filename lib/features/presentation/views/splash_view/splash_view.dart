@@ -31,22 +31,22 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: TColor.bg,
-      body: Stack(
-        alignment: Alignment.center,
-        children: [
-          Container(
-            width: context.width,
-            height: context.height,
-            color: TColor.primary,
-          ),
-          Image.asset(
-            AppImages.logo,
-            width: context.width * 0.4,
-            color: Colors.white,
-          ),
-        ],
-      ),
+        backgroundColor: TColor.bg,
+        body: Stack(
+          alignment: Alignment.center,
+          children: [
+            Container(
+              width: context.width,
+              height: context.height,
+              color: TColor.primary,
+            ),
+            Image.asset(
+              AppImages.logo,
+              width: context.width * 0.4,
+              color: Colors.white,
+            ),
+          ],
+        ),
     );
   }
 }
